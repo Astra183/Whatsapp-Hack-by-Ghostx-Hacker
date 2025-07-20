@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+  <title>TEAM GHOST X HACKS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+<audio id="bgMusic" src="bg-music.mp3" autoplay loop></audio>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const bgMusic = document.getElementById("bgMusic");
+    if (bgMusic) {
+      bgMusic.volume = 0.5; // volume 20% pe rakhi gayi hai
+    }
+  });
+</script>
+:root {
+      --neon: red;
+      --dark: #000;
+      --glow: 0 0 5px red, 0 0 10px yellow 0 0 20px blue;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: yellow;
+      color#00ff
+      font-family: 'Orbitron', monospace;
+      font-style: italic;
+      font-weight: bold;
+      overflow-x: hidden;
+    }
+  .terminal {
+    border: 10px solid red;
+    background-color: black;
+    font-size: 13.4;
+    font-family: Courier New;
+    font-style: italic;
+    font-weight: bold;
+    padding: 15px;
+    margin: 20px;
+    box-shadow: 0 0 15pxblue;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    border-radius: 20px;
+  }
+  input {
+    background: Red;
+    color: blue;
+    font-display: yellow;
+    font-family: Courier New;
+    font-style: italic;
+    font-weight: bold;
+    border: 8px solid#8e24ee ;
+    padding: 10px;
+    font-size: 20px;
+    width: calc(100% - 5px);
+    margin-bottom: 80px;
+    border-radius: 20px;
+  }
+  .center-btn {
+    text-align: center;
+  }
+  button {
+    background: ;
+    color: #8e24ee;
+    border: 15px solid #0a8ef7;
+    padding: 10px 40px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  button:hover {
+    background: blue;
+    color: #0a8ef7;
+  }
+  .floating-text {
+    position: fixed;
+    color: #00ff;
+    font-size: 30px;
+    pointer-events: none;
+    z-index: 20;
+  }
+  canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="terminal" id="terminal">
+  <pre id="output">ASTRA WHATSAPP HACK PRO v9.0
+
+Enter Whatsapp Number:</pre>
+  <input type="text" id="number" placeholder="Enter Number">
+  <div class="center-btn">
+    <button onclick="startHack()">Start Hack</button>
+  </div>
+</div>
+
+<script>
+// Matrix effect
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+const letters = "灰";
+const fontSize = 8;
+const columns = canvas.width / fontSize;
+const drops = Array.from({length: columns}).fill(1);
+function draw() {
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = "red";
+  drops.forEach((y, i) => {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i*fontSize, y*fontSize);
+    if (y*fontSize > canvas.height && Math.random() > 0.9) drops[i] = 0;
+    drops[i]++;
+  });
+}
+setInterval(draw, 35);
+
+// Floating TEAM ASTRA text
+for (let i=0; i<0; i++){
+  const hackerText = document.createElement("div");
+  hackerText.className = "floating-text";
+  hackerText.innerText = "";
+  document.body.appendChild(hackerText);
+  moveText(hackerText);
+}
+function moveText(el){
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  function move(){
+    el.style.left = Math.random() * w + "px";
+    el.style.top = Math.random() * h + "px";
+  }
+  move();
+  setInterval(move, 2000);
+}
+
+// Hack Process
+let stepIndex = 0;
+let steps = [];
+function startHack() {
+  const number = document.getElementById("number").value.trim();
+  if (!number) return alert("Enter number first!");
+  const terminal = document.getElementById("terminal");
+  terminal.innerHTML = `<pre id="output">Hacking Whatsapp Number: ${number}\n\n</pre>`;
+  const output = document.getElementById("output");
+
+  const hackerCommands = [
+    "Connecting to server...",
+    "Injecting payload...",
+    "Brute forcing password...",
+    "Retrieving data...",
+    "Decrypting chats...",
+    "Extracting media files...",
+    "Gaining admin access...",
+    "Cloning database...",
+    "Downloading messages...",
+    "Fetching call logs...",
+    "Disabling security logs...",
+    "Bypassing encryption...",
+    "Injecting keylogger...",
+    "Uploading backdoor..."
+  ];
+
+  steps = [];
+  for (let i=0; i<90; i++) {
+    let cmd = hackerCommands[Math.floor(Math.random()*hackerCommands.length)];
+    steps.push("[+] " + cmd);
+  }
+  steps.push("✅ Hack Successful!\n\nFetching Chat Logs...\n");
+  stepIndex = 0;
+  nextStep(output);
+}
+
+function nextStep(output) {
+  if (stepIndex < steps.length) {
+    output.innerHTML += steps[stepIndex] + "\n";
+    stepIndex++;
+    document.getElementById("terminal").scrollTop = document.getElementById("terminal").scrollHeight;
+    setTimeout(() => nextStep(output), 0 + Math.random() * 90000);
+  } else {
+    showChats(output);
+  }
+}
+function showChats(output) {
+  const Chats = [
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+    "Error: No chats found!",
+  ];
+  let chatIndex = 0;
+  function showNextChat() {
+    if (chatIndex < Chats.length) {
+      output.innerHTML += fakeChats[chatIndex] + "\n";
+      document.getElementById("terminal").scrollTop = document.getElementById("terminal").scrollHeight;
+      chatIndex++;
+      setTimeout(showNextChat, 2000);
+    }
+  }
+  showNextChat();
+}
+</script>
+
+</body>
+</html>
+<head>
+  <meta charset="UTF-8">
+  <title>TEAM GHOST X HACKS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+    :root {
+      --neon: red;
+      --dark: #000;
+      --glow: 0 0 5px red, 0 0 10px yellow 0 0 20px blue;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: blue;
+      color: red;
+      font-family: 'Orbitron', monospace;
+      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      text-shadow: 0 0 15px #00ff;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #1c18ff;
+      animation: glow 0.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px red, 0 0 20px #a93eda; }
+      to { text-shadow: 0 0 0px #a93eda, 0 0 30px #a93eda; }
+    }
+
+    .typing {
+      font-size: 1.2em;
+      margin-top: 5px;
+      border-right: 5px solid blue;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 9.8s step-end infinite;
+    }
+
+    @keyframes typing { to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: black;
+      border: 1px solid #a93eda;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00fa;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: yellow;
+      text-shadow: 0 0 10px #00ff;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      border: 39px;
+      padding: 8px 0;
+      border-bottom: 1px solid blue;
+      border-radius: 8px;
+    }
+    /* 🌈 RAINBOW ANIMATION */
+@keyframes rainbowBorder {
+  0% { border-color: red; }
+  20% { border-color: #ef2de6; }
+  40% { border-color: #2080fa; }
+  60% { border-color: #3ff22c; }
+  80% { border-color: blue; }
+  100% { border-color: violet; }
+  transition: 6.3s;
+  animation: rainbowBorder 30s linear infinite;
+}
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #00ff;
+      color: yellow;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 20px red;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+     0.9em;
+      color: #a93eda;
+      text-shadow: 0 0 10px #00ff88;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<header>
+  <h1>TEAM Ghostx HACKER</h1>
+  <div class="typing">|HACKING|BY|TEAM Ghostx|</div>
+</header>
+
+<section>
+  <h2>W.A HACK TOOL</h2>
+  <p>DON'T USE FOR ILLEGAL ACTIVITY OTHERWISE WE ARE NOT RESPONSIBLE ANY PROBLEM CONTACT WITH US.</p>
+</section>
+
+<section>
+  <h2>SKILLS</h2>
+  <ul>
+    <li>Expert in Hacking Tools</li>
+    <li>App developer</li>
+    <li>penitester</li>
+    <li>web developer</li>
+    <li>Graphics Designer</li>
+    <li>HTML, CSS, JavaScript Python</li>
+    <li>Termux Tools Expert</li>
+    <li>Mobile App Modding & Automation</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Join Chatroom</h2>
+  <ul>
+    Ghostx dark web comminuty 
+    <li>
+  <a href="https://chat.com/Jd8mQTMgXzE9elxvngA6" class="btn"
+  target="_blank">Join Ghostx</a>
+</section>
+
+<section>
+  <h2>GHOST X TOOLS</h2>
+<script>
+  // Matrix Background Effect
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  const letters = '777777788888887777';
+  const fontSize = 10;
+  const columns = canvas.width;
+  fontSize: 20;
+  const drops = Array.from({ length: columns }).fill(1);
+  const color = blue;
+
+  function draw() {
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = "yellow";
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < columns.length; i++) {
+        const char = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(char, i * fontSize, columns[i]);
+        if (columns[i] > height && Math.random() > 0.975) {
+          columns[i] = 0;
+        }
+        columns[i] += fontSize;
+      }
+      requestAnimationFrame(draw);
+    }
+    draw( setInterval(drawMatrix, 3);
+</script>
+
+</body>
+</html>
+    
